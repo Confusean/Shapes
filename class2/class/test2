@@ -1,0 +1,39 @@
+package pkgShape;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class TriangleTest{
+	
+	void TestTriangle(){
+		double sides = 7;
+		double angles = 60;
+		
+		
+		Triangle t1 = null;
+		
+		try{
+			t1 = new Triangle(sides);
+		} catch (Exception e){
+		
+		
+		assertEquals(sides, t1.getS1(),0.01);
+		assertEquals(sides, t1.getS2(),0.01);
+		assertEquals(sides, t1.getS3(),0.01);
+		assertEquals(angles,t1.AngleA(),0.01);
+		
+		
+		
+	}
+	
+	void TestTriangle_2(){
+		double sides = -7;
+		double angles = 60;
+		
+		assertThrows(Exception.class, () ->{
+			Triangle t1 = new Triangle(sides);
+		});
+	
+	}
+	
+	
+}
